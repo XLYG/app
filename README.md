@@ -1,56 +1,93 @@
-# Welcome to your Expo app 👋
+# AI 学习助手 App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+这是一个基于 React Native + Expo 的 AI 学习助手 MVP。
 
-## Get started
+当前流程：
 
-1. Install dependencies
+1. 用户进入 App 后先输入用户名。
+2. App 请求后端检查该用户名是否已保存 DeepSeek API Key。
+3. 如果已保存，进入聊天页。
+4. 如果未保存，跳转配置页保存用户名和 DeepSeek API Key。
+5. 后端将 Key 加密后存入 MySQL。
+6. 聊天时 App 请求后端，后端代请求 DeepSeek。
 
-   ```bash
-   npm install
-   ```
+## 技术栈
 
-2. Start the app
+- Expo
+- React Native
+- Expo Router
+- TypeScript
+- Express
+- MySQL
+- DeepSeek API
 
-   ```bash
-   npx expo start
-   ```
+## 本地开发
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+安装依赖：
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+启动后端：
 
-### Other setup steps
+```bash
+npm run server:dev
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+启动 App：
 
-## Learn more
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Web 调试：
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm run web
+```
 
-## Join the community
+## 环境变量
 
-Join our community of developers creating universal apps.
+前端环境变量示例见：
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```text
+.env.example
+```
+
+后端环境变量示例见：
+
+```text
+server/.env.example
+```
+
+真实环境变量文件不要提交到 Git。
+
+## 常用地址
+
+```text
+App Web: http://localhost:8081
+API: http://localhost:3001
+API Health: http://localhost:3001/api/health
+DB Health: http://localhost:3001/api/db/health
+```
+
+## 文档
+
+项目规范和开发计划见：
+
+```text
+docs/
+```
+
+手机真机测试见：
+
+```text
+docs/MOBILE_TESTING.md
+```
+
+每日开发记录见：
+
+```text
+dev-daily/
+```

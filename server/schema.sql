@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS ai_study_assistant
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_unicode_ci;
+
+USE ai_study_assistant;
+
+CREATE TABLE IF NOT EXISTS user_api_keys (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  username VARCHAR(100) NOT NULL,
+  provider VARCHAR(50) NOT NULL DEFAULT 'deepseek',
+  api_key_encrypted TEXT NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deleted_at TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY unique_user_provider (username, provider)
+);

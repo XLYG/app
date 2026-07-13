@@ -11,9 +11,10 @@
 1. `docs/README.md`：项目文档索引。
 2. `docs/PROJECT_REQUIREMENTS.md`：项目目标、MVP 范围和暂不开发事项。
 3. `docs/TECHNICAL_STANDARD.md`：技术选型、目录职责、API 和安全规则。
-4. `docs/DESIGN_STANDARD.md`：页面、交互、文案和可用性规范。
-5. `docs/DEVELOPMENT_PLAN.md`：分阶段开发计划。
-6. `docs/EXECUTION_STANDARD.md`：每次开发前后的执行标准。
+4. `docs/BACKEND_STORAGE_STANDARD.md`：后端、MySQL、DeepSeek Key 存储与删除规则。
+5. `docs/DESIGN_STANDARD.md`：页面、交互、文案和可用性规范。
+6. `docs/DEVELOPMENT_PLAN.md`：分阶段开发计划。
+7. `docs/EXECUTION_STANDARD.md`：每次开发前后的执行标准。
 
 ## 每日开发记录
 
@@ -41,3 +42,5 @@ dev-daily/YYYY-MM-DD.md
 5. 不开发登录、注册、支付、复杂用户系统等非 MVP 功能。
 6. 前端只请求自己的后端，不直接请求 AI 模型供应商。
 7. 不把真实 API Key、Token 或敏感配置写入源码、文档或日志。
+8. 前端不直接连接 MySQL；数据库访问只能放在后端。
+9. DeepSeek API Key 由用户提交给后端保存，后续聊天由后端代请求 DeepSeek。
